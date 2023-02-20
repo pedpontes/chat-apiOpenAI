@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPENAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div id="chat"></div>
+    </section>
+    <div id="submit">
+        <textarea id="text" cols="50" rows="2"></textarea>
+        <button id="button">Enviar</button>
+    </div>
+    <script>
+        var botao = document.querySelector('#button');
+        var text = document.querySelector('#text');
+        var chat = document.querySelector('#chat');
+
+        function enviar(){
+            chat.innerHTML += `<li class='eu'>${text.value}`
+            fetch('/enviar', {
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({text: text.value})  
+            })
+            .then( res => res.json())
+            .then( data => {
+                let txt = data.body.text
+                chat.innerHTML += `<li class='ia'>${txt}`
+            })
+            text.value = ''
+        }
+        botao.addEventListener('click', enviar)
+        
+        
+    </script>
+</body>
+</html>
