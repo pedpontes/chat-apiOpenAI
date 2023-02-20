@@ -5,20 +5,9 @@ Este é um aplicativo simples de chatbot que utiliza a OpenAI API para gerar tex
 ## Começando
 Antes de usar o aplicativo, você precisará inserir sua chave de API da OpenAI no objeto de configuração. Se você não tiver uma chave de API, poderá obter uma no site da OpenAI.
 
-Para instalar as dependências necessárias, execute o seguinte comando em seu terminal:
-
-npm install
-
-Depois que as dependências forem instaladas, você poderá iniciar o servidor executando:
-
-npm start
-
-Você deverá ver uma mensagem indicando que o servidor está em execução.
-
 ## Uso
 Para usar o chatbot, navegue até localhost:3000 em seu navegador da web. Digite uma mensagem no campo de entrada e pressione "Enviar". O chatbot responderá com texto gerado com base em sua entrada.
 
-## Referência da API
 Este aplicativo utiliza as seguintes tecnologias:
 
  - body-parser para analisar solicitações JSON recebidas
